@@ -1,0 +1,63 @@
+{% extends 'home.html' %}
+
+{% block title %}
+Step : 3
+{% endblock title %}
+
+{% block body %}
+
+<div class="jumbotron p-4 p-md-5 text-white rounded-0 bg-dark" style="margin-top: 20px; margin-bottom: 20px;">
+    <div class="col-md-6 px-0">
+        <h1 class="display-4">Step 3 : Provide your account's App Password</h1>
+        <p class="lead my-3">Create an App password and provide us with that password. Don't worry Provided password will not Miss used by us. An app password is specially generated for security reasons by Google so that your official account password remains safe.</p>
+        <p class="lead mb-0"><a href="https://support.google.com/accounts/answer/185833?hl=en#:~:text=An%20app%20password%20is%20a,2%2DStep%20Verification%20turned%20on." class="text-white font-weight-bold">Click here for more Info...</a></p>
+        <p class="lead mb-0"><a href="https://myaccount.google.com/security" class="text-white font-weight-bold">Create an app password...</a></p>
+    </div>
+</div>
+
+<br>
+
+<div class="container">
+    <div class="center-form mx-auto" style="max-width: 500px;">
+        <form method="post" action="verification3" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group row">
+                <label for="emailaddress" class="col-sm-2 col-form-label col-form-label-lg">Email</label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control form-control-lg" id="colFormLabelLg" name="SenderEmail" placeholder="Sender's Email address" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailaddress" class="col-sm-2 col-form-label col-form-label-lg">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control form-control-lg" id="colFormLabelLg" name="SenderPassword" placeholder="App password" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailaddress" class="col-sm-2 col-form-label col-form-label-lg">Subject</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-lg" id="colFormLabelLg" name="SenderSubject" placeholder="Enter Email Subject" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailaddress" class="col-sm-2 col-form-label col-form-label-lg">Message</label>
+                <div class="col-sm-10">
+                    <textarea class="form-control custom-form-control border-dark" id="EmailDesc" rows="3" name="EmailDesc" placeholder="Type your email here" required></textarea>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="emailaddress" class="col-sm-2 col-form-label col-form-label-lg">Attach</label>
+                <div class="col-sm-10">
+                    <input type="file" class="form-control form-control-lg" id="colFormLabelLg" name="file" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10 mb-3">
+                    <button type="submit" class="btn btn-dark">Send</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock body %}

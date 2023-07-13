@@ -1,0 +1,47 @@
+{% extends 'home.html' %}
+
+{% block title %}
+Step : 2
+{% endblock title %}
+
+{% block body %}
+<style>
+    .center-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+    }
+
+    .form-group input[type="email"] {
+        height: 40px;
+        border: 2px solid gray;
+    }
+</style>
+<div class="text-center">
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <strong><h1 class="display-4">Step 2 : Verify your Email Address by entering OTP.</h1></strong>
+            <p class="lead">Provide us OTP Which is sent on your provided Email address.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="center-form">
+    <form method="post" action="/verification2">
+        {% csrf_token %}
+        <div class="form-group row">
+            <label for="emailaddress" class="col-sm-2 col-form-label col-form-label-lg">OTP</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control form-control-lg" id="colFormLabelLg" name="OTP" placeholder="Enter OTP" Required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="offset-sm-2 col-sm-10 mb-7">
+                <button type="submit" class="btn btn-dark">Next</button>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock body %}

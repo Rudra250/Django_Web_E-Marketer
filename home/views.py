@@ -55,7 +55,7 @@ def verification(request):
 
 def send_OTP(verifyemail,otp):
 
-    sender_email = 'rudratemp09@gmail.com'
+    sender_email = 'YOUR TEMPORARY EMAIL ADDRESS'
     receiver_email = verifyemail
     subject = 'OTP Verification'
     body = f'Hey this the message from E-Marketer, Your OTP is: {otp}'
@@ -70,7 +70,7 @@ def send_OTP(verifyemail,otp):
     smtp_server = 'smtp.gmail.com'
     smtp_port = 587
     smtp_username = sender_email
-    smtp_password = 'xuro izqc qdrz sixl'
+    smtp_password = 'YOUR ACCOUNTS APP PASSWORD'
 
     server = smtplib.SMTP(smtp_server, smtp_port)
     server.starttls()
